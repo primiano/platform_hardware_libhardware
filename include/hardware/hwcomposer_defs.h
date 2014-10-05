@@ -107,7 +107,11 @@ enum {
     HWC_BLENDING_PREMULT  = 0x0105,
 
     /* SRC_ALPHA / ONE_MINUS_SRC_ALPHA */
-    HWC_BLENDING_COVERAGE = 0x0405
+    HWC_BLENDING_COVERAGE = 0x0405,
+
+    /* DIM. source is forced to a solid color (0,0,0,alpha), and apply
+     * (ONE / ONE_MINUS_SRC_ALPHA) blending during composition. */
+    HWC_BLENDING_DIM      = 0x0805,
 };
 
 /*
@@ -170,6 +174,7 @@ enum {
      */
     HWC_DISPLAY_DPI_X                       = 4,
     HWC_DISPLAY_DPI_Y                       = 5,
+    HWC_DISPLAY_FORMAT                      = 6,
 };
 
 /* Allowed events for hwc_methods::eventControl() */
